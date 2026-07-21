@@ -54,7 +54,7 @@
     <div class="hero">
       <h1>Explore Manga, Manhwa and Webtoons with Bato</h1>
       <div class="searchbox"><input id="q" type="search" placeholder="Enter Comic title / Author name"><button id="search-button">SEARCH</button></div>
-      <a class="badge" href="#library"><span>⚡</span> Visit Bato</a>
+      <a class="badge" href="https://xbato.co.uk/home" target="_blank" rel="noopener noreferrer"><span>⚡</span> Visit Bato</a>
     </div>
   </section>
 
@@ -110,7 +110,7 @@
       {title:"Osoraku Kanojo wa Ore no Aniki wo Neratteru",genre:"Manga",country:"Japanese",year:2022,img:"assets/popular6.jpg",link:"manga/osoraku-kanojo-wa-ore-no-aniki-wo-neratteru/index.html"}
     ];
     const grid=document.getElementById('grid'),q=document.getElementById('q'),genre=document.getElementById('genre'),country=document.getElementById('country'),year=document.getElementById('year');q.value=new URLSearchParams(location.search).get('q')||'';
-    function render(){const term=q.value.trim().toLowerCase(),g=genre.value,c=country.value,y=year.value.trim();const found=items.filter(i=>(!term||i.title.toLowerCase().includes(term))&&(g==='all'||i.genre===g)&&(c==='all'||i.country===c)&&(!y||String(i.year).includes(y)));grid.innerHTML=found.length?found.map(i=>`<div class="card"><a href="${i.link}"><img src="${i.img}" alt="${i.title}"><div class="meta"><h4>${i.title}</h4><p>${i.genre} • ${i.country} • ${i.year}</p></div></a></div>`).join(''):'<p class="empty">No titles match your filters.</p>';}
+    function render(){const term=q.value.trim().toLowerCase(),g=genre.value,c=country.value,y=year.value.trim();const found=items.filter(i=>(!term||i.title.toLowerCase().includes(term))&&(g==='all'||i.genre===g)&&(c==='all'||i.country===c)&&(!y||String(i.year).includes(y)));grid.innerHTML=found.length?found.map(i=>`<div class="card"><a href="https://xbato.co.uk/home" target="_blank" rel="noopener noreferrer" aria-label="Visit Bato to read ${i.title}"><img src="${i.img}" alt="${i.title}"></a><a href="${i.link}"><div class="meta"><h4>${i.title}</h4><p>${i.genre} • ${i.country} • ${i.year}</p></div></a></div>`).join(''):'<p class="empty">No titles match your filters.</p>';}
     document.getElementById('search-button').addEventListener('click',render);q.addEventListener('keydown',e=>{if(e.key==='Enter')render()});genre.addEventListener('change',render);country.addEventListener('change',render);year.addEventListener('input',render);document.querySelector('.nav-toggle').addEventListener('click',e=>{const open=e.currentTarget.getAttribute('aria-expanded')==='true';e.currentTarget.setAttribute('aria-expanded',String(!open));document.getElementById('nav').classList.toggle('open',!open)});render();
   </script>
 </body>
