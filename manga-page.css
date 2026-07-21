@@ -1,0 +1,227 @@
+/* =====================================================
+   Batosi – Manga Detail Page Stylesheet
+   ===================================================== */
+
+/* ── Manga Page Wrapper ───────────────────────────── */
+.manga-page-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 20px 40px;
+}
+
+/* ── Breadcrumb ───────────────────────────────────── */
+.breadcrumb {
+  font-size: 13px;
+  color: #7a8a9a;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.breadcrumb a { color: #ff5f5f; }
+.breadcrumb a:hover { color: #fff; }
+.breadcrumb span { color: #4a5a6a; }
+
+/* ── Manga Hero ───────────────────────────────────── */
+.manga-hero {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 40px;
+  background: #1a2536;
+  border: 1px solid #243045;
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.manga-hero-cover {
+  flex: 0 0 200px;
+}
+
+.cover-img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+  display: block;
+}
+
+.manga-hero-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Type Badge ───────────────────────────────────── */
+.type-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6b6b, #ff3b3b);
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  align-self: flex-start;
+}
+
+/* ── Title ────────────────────────────────────────── */
+.manga-title {
+  font-size: 26px;
+  color: #f0f4f8;
+  margin: 0;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+/* ── Meta Row (rating + status) ───────────────────── */
+.manga-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.manga-rating {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.stars {
+  color: #f59e0b;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+.manga-rating strong {
+  color: #fff;
+  font-size: 16px;
+}
+
+.status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: .4px;
+}
+
+.status-ongoing { background: #16a34a; color: #fff; }
+.status-done    { background: #6366f1; color: #fff; }
+
+/* ── Genre Tags ───────────────────────────────────── */
+.manga-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.genre-tag {
+  background: #1e2d42;
+  color: #ff9999;
+  border: 1px solid rgba(255, 95, 95, 0.3);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ── Synopsis ─────────────────────────────────────── */
+.manga-synopsis {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #9fb3c8;
+  margin: 0;
+}
+
+/* ── CTA Buttons ──────────────────────────────────── */
+.manga-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.btn-read {
+  font-size: 15px;
+  padding: 12px 24px;
+}
+
+/* ── Chapter List ─────────────────────────────────── */
+.chapters-section {
+  margin-bottom: 36px;
+}
+
+.chapters-note {
+  font-size: 14px;
+  color: #7a8a9a;
+  margin: 0 0 14px;
+}
+
+.chapters-note a {
+  color: #ff5f5f;
+}
+
+.chapter-list-page {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+
+.chapter-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #1a2536;
+  border: 1px solid #243045;
+  border-radius: 6px;
+  color: #63b3ed;
+  font-size: 14px;
+  transition: background .15s, border-color .15s, color .15s;
+}
+
+.chapter-link:hover {
+  background: #243045;
+  border-color: #ff5f5f55;
+  color: #fff;
+}
+
+.ch-arrow {
+  color: #ff5f5f;
+  font-size: 16px;
+}
+
+/* ── Info Table Section ───────────────────────────── */
+.info-section {
+  margin-bottom: 40px;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 700px) {
+  .manga-hero {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .manga-hero-cover {
+    flex: none;
+    width: 140px;
+    margin: 0 auto;
+  }
+
+  .manga-title { font-size: 20px; }
+
+  .chapter-list-page {
+    grid-template-columns: 1fr;
+  }
+}
